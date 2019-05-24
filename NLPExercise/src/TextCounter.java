@@ -8,34 +8,46 @@ public class TextCounter {
 	public static void main(String[] args) throws FileNotFoundException {
 		File file = new File("/Users/nicholasperry/Desktop/sampletext.txt");
 		Scanner scanner = new Scanner(file);
-		
-		ArrayList<String> paragraphs = new ArrayList<String>();
-		
-		while (scanner.hasNextLine()) {
-			paragraphs.add(scanner.nextLine());
+		String text = "";
+		while(scanner.hasNextLine()) {
+			text = text + scanner.nextLine() + "\n";
 		}
 		scanner.close();
-		
-		String entireText = ""; 
 
-		for (String paragraph : paragraphs) {
-			entireText = entireText + paragraph.toString() + " ";
-		}
+		int words = countWords(text);
+		int sentences = countSentences(text);
+		int paragraphs = countParagraphs(text);
 		
-		Pattern pattern = Pattern.compile("[a-zA-Z]*[\\.\\-][\\\"]?[\\s]");
-		Matcher matcher = pattern.matcher(entireText);
+		//However, words here are defined as anything between the whitespace. Refine.
+		System.out.println("There are " + words + " words.");	
+		//Think about including other punctuation.
+		System.out.println("There are " + sentences + " sentences.");	
+		//This only works if there is a new line at the end of last paragraph
+		System.out.println("There are " + paragraphs + " paragraphs.");
 		
+	}
+	
+	public static int countWords(String text) {
+		return text.split("\\s").length;
+	}
+	
+	public static int countSentences(String text) {
 		int sentences = 0;
+		Pattern pattern = Pattern.compile("[a-zA-Z]*[\\.\\-][\\\"]?[\\s]");
+		Matcher matcher = pattern.matcher(text);
 		while (matcher.find()) {
 			sentences++;
 		}
-		
-		System.out.println("This is an input test test run\n\n\nThere are " + paragraphs.size() + " paragraphs.");
-		System.out.println("There are " + sentences + " sentences.");
-		//Think about including other punctuation.
-		System.out.println("There are " + entireText.split("\\s").length + " words.");
-		//However, words here are defined as anything between the whitespace. Refine.
-
+		return sentences;
 	}
 
+	public static int countParagraphs(String text) {
+		int paragraphs = 0;
+		Pattern pattern = Pattern.compile("[\n]");
+		Matcher matcher = pattern.matcher(text);
+		while (matcher.find()) {
+			paragraphs++;
+		}
+		return paragraphs;
+	}
 }
