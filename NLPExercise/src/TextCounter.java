@@ -36,6 +36,10 @@ public class TextCounter {
 	public static int countWords(String text) {
 		int words = 0;
 		Pattern pattern = Pattern.compile("[[[A-Z]{1}[//.]{1}]{2,}]*[a-zA-Z]+[-']?[a-z]*");
+		//Pattern pattern = Pattern.compile("[[A-Z]{1}[\\.]{1}]{2,}"); // For acronyms
+		//Pattern pattern = Pattern.compile("[a-zA-Z]+[-']?[a-z]+|[Ia]"); // For all other normal words
+		//Pattern pattern = Pattern.compile("[][]");
+
 		// Try to fix missing dangling period from acronym
 		Matcher matcher = pattern.matcher(text);
 		while (matcher.find()) {
