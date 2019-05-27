@@ -38,5 +38,5 @@ Create a command-line Java application that given a path to a text file it will 
 - Room for improvement in sentence-counting algorithm: <br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Consider situations where acronyms happen at the middle or end of a sentence  <br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Explore other potential punctuation situations  <br />
-- Room for improvement in paragraph-counting algorithm <br />
+- Room for improvement in paragraph-counting algorithm: <br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Determine any situations where current algorithm could fail  <br />
