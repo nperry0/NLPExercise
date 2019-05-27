@@ -6,9 +6,8 @@ import java.util.regex.Pattern;
 public class TextCounter {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		File file = new File("/Users/nicholasperry/Desktop/sampletext.txt");
-		//Don't forget to change input to CLI
-		
+		File file = new File(args[0]);
+				
 		String text = fileToString(file);
 
 		int words = countWords(text);
@@ -26,7 +25,6 @@ public class TextCounter {
 		Scanner scanner = new Scanner(file);
 		while(scanner.hasNextLine()) {
 			text = text + scanner.nextLine() + "\n";
-			
 		}
 		scanner.close();
 		return text;
@@ -40,7 +38,6 @@ public class TextCounter {
 
 		Matcher matcher = pattern.matcher(text);
 		while (matcher.find()) {
-			System.out.println(matcher.toString());
 			words++;
 		}
 		return words;
@@ -52,8 +49,6 @@ public class TextCounter {
 		Matcher matcher = pattern.matcher(text);
 		while (matcher.find()) {
 			sentences++;
-			System.out.println(matcher.toString());
-
 		}
 		return sentences;
 	}
