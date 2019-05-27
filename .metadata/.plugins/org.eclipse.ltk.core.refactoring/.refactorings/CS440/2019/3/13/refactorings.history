@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;set&apos; in &apos;quiz9.Quiz9T1.main(...)&apos; to &apos;cellLength&apos;&#x0A;- Original project: &apos;CS440&apos;&#x0A;- Original element: &apos;quiz9.Quiz9T1.main(String[]).set&apos;&#x0A;- Renamed element: &apos;set&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;set&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;quiz9{Quiz9T1.java[Quiz9T1~main~\[QString;@set!1546!1569!1550!1552!\[I!0!false" name="cellLength" references="true" stamp="1553452344740" version="1.0"/>
-</session>

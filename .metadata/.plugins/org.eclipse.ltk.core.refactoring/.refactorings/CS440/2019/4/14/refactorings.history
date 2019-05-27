@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;query&apos; in &apos;quiz10.Quiz10.main(...)&apos; to &apos;query1&apos;&#x0A;- Original project: &apos;CS440&apos;&#x0A;- Original element: &apos;quiz10.Quiz10.main(String[]).query&apos;&#x0A;- Renamed element: &apos;query&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;query&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;quiz10{Quiz10.java[Quiz10~main~\[QString;@query!610!1049!703!707!QString;!16!false" name="query1" references="true" stamp="1554317563401" version="1.0"/>
-</session>
