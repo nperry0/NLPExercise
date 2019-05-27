@@ -26,7 +26,8 @@ public class TextCounter {
 		Scanner scanner = new Scanner(file);
 		while(scanner.hasNextLine()) {
 			text = text + scanner.nextLine() + "\n";
-			
+			System.out.println(matcher.toString());
+
 		}
 		scanner.close();
 		return text;
@@ -52,8 +53,6 @@ public class TextCounter {
 		Matcher matcher = pattern.matcher(text);
 		while (matcher.find()) {
 			sentences++;
-			System.out.println(matcher.toString());
-
 		}
 		return sentences;
 	}
