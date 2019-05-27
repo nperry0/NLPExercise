@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class TextCounter {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("/Users/nicholasperry/Desktop/sampletext.txt");
+		Scanner scanner = new Scanner(file);
+		
+		int words = countWords(scanner);
+		int sentences = countSentences(scanner);
+		int paragraphs = countParagraphs(scanner);
+		
+		//However, words here are defined as anything between the whitespace. Refine.
+		System.out.println("There are " + words + " words.");	
+		//Think about including other punctuation.
+		System.out.println("There are " + sentences + " sentences.");		
+		System.out.println("There are " + paragraphs + " paragraphs.");
+		
+		scanner.close();
+	}
+	
+	public static int countWords(Scanner scanner) {
+		String text = "";
+		while(scanner.hasNextLine()) {
+			text = text + scanner.nextLine();
+		}
+		System.out.println(text);
+		return text.split("\\s").length;
+	}
+	
+	public static int countSentences(Scanner scanner) {
+		String text = scanner.toString();
+		Pattern pattern = Pattern.compile("[a-zA-Z]*[\\.\\-][\\\"]?[\\s]");
+		Matcher matcher = pattern.matcher(text);
+		
+		int sentences = 0;
+		while (matcher.find()) {
+			sentences++;
+		}
+		return sentences;
+	}
+
+	public static int countParagraphs(Scanner scanner) {
+		int paragraphs = 0;
+		while (scanner.hasNextLine()) {
+			paragraphs++;
+			scanner.nextLine();
+		}
+		return paragraphs;
+	}
+}
