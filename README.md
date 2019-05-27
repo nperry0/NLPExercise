@@ -38,5 +38,6 @@ Create a command-line Java application that given a path to a text file it will 
 - Room for improvement in sentence-counting algorithm: <br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Consider situations where acronyms happen at the middle or end of a sentence  <br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Explore other potential punctuation situations  <br />
+&nbsp;&nbsp;&nbsp;&nbsp; - The '\w' at the beginning of the regex is unnecessary. I left it in for debugging purposes.  <br />
 - Room for improvement in paragraph-counting algorithm: <br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Determine any situations where current algorithm could fail  <br />
